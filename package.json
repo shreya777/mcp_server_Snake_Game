@@ -4,7 +4,7 @@
   "main": "mcp-server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node mcp-server.js"
+    "start": "node mcp-server.js",
     "gcp-build": "npm install --omit=dev"
   },
   "dependencies": {
@@ -12,3 +12,4 @@
     "uuid": "^9.0.1"
   }
 }
+
