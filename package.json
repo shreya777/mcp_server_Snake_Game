@@ -1,0 +1,18 @@
+{
+  "name": "snake-game-mcp-server",
+  "version": "1.0.0",
+  "main": "mcp-server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node mcp-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
+  }
+}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 93c141c5ce134f32b3cf3a9333f3d35b09ea0d3f
