@@ -12,7 +12,7 @@ const SERVER_ID = 'ded7271b-0170-4cdb-9c05-c2078f7fcc98';
 app.use(function(req, res, next) {
   res.setHeader(
     'Content-Security-Policy',
-    "default-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self';" 
+    "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self';" 
     // Add other directives as needed.
     // 'data:' is added to img-src to allow base64 encoded images, which are sometimes used for favicons or placeholders.
   );
@@ -41,3 +41,4 @@ app.listen(port, () => {
   console.log(`MCP server listening at http://localhost:${port}`);
   console.log(`Server ID: ${SERVER_ID}`);
 });
+
