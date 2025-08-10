@@ -6,6 +6,16 @@ const port = process.env.PORT || 3001;
 // Use a fixed server ID
 const SERVER_ID = 'ded7271b-0170-4cdb-9c05-c2078f7fcc98';
 
+// Middleware to set Content Security Policy (CSP) header
+// Place this after the app initialization and before your routes
+app.use(function(req, res, next) {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self';" // Add other directives as needed
+  );
+  next(); // Pass control to the next middleware or route handler
+});
+
 // Test endpoint for MCP connectivity
 app.get('/mcp/ping', (req, res) => {
   res.json({ status: 'ok', message: 'MCP server is running' });
