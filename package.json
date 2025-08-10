@@ -1,26 +1,13 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3001; // This is good!
-
-// Use a fixed server ID
-const SERVER_ID = 'ded7271b-0170-4cdb-9c05-c2078f7fcc98';
-
-// Test endpoint for MCP connectivity
-app.get('/mcp/ping', (req, res) => {
-  res.json({ status: 'ok', message: 'MCP server is running' });
-});
-
-// Endpoint to get the MCP server ID
-app.get('/mcp/server-id', (req, res) => {
-  res.json({ serverId: SERVER_ID });
-});
-
-// Start server
-app.listen(port, () => {
-  console.log(`MCP server listening at http://localhost:${port}`);
-  console.log(`Server ID: ${SERVER_ID}`);
-});
-
-
-
-
+{
+  "name": "snake-game-mcp-server",
+  "version": "1.0.0",
+  "main": "mcp-server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node mcp-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
+  }
+}
