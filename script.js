@@ -238,10 +238,11 @@ class SnakeGame {
     }
 
     clearCanvas() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        this.ctx.fillStyle = theme === 'light' ? '#ffffff' : '#f8f9fa';
-        this.ctx.fillRect(0, 0, this.gameAreaWidth, this.gameAreaHeight);
-    }
+    const theme = document.documentElement.getAttribute('data-theme');
+    // Change the dark theme background color to a darker shade
+    this.ctx.fillStyle = theme === 'dark' ? '#2d3436' : '#ffffff';
+    this.ctx.fillRect(0, 0, this.gameAreaWidth, this.gameAreaHeight);
+}
 
     drawSnake() {
         const theme = document.documentElement.getAttribute('data-theme');
