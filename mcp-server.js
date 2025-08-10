@@ -6,7 +6,7 @@ const port = process.env.PORT || 3001;
 // Use a fixed server ID
 const SERVER_ID = 'ded7271b-0170-4cdb-9c05-c2078f7fcc98';
 
-// *** Explicitly serve favicon.ico with the CSP header first ***
+// Explicitly serve favicon.ico with the CSP header first
 app.get('/favicon.ico', (req, res, next) => {
   res.setHeader(
     'Content-Security-Policy',
@@ -30,7 +30,16 @@ app.use(function(req, res, next) {
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ... rest of your code (mcp/ping, mcp/server-id) ...
+// New routes for mcp/ping and mcp/server-id
+// This route responds with "pong" to health check pings.
+app.get('/mcp/ping', (req, res) => {
+  res.send('pong');
+});
+
+// This route returns the unique server ID.
+app.get('/mcp/server-id', (req, res) => {
+  res.send(SERVER_ID);
+});
 
 // Start server
 app.listen(port, () => {
